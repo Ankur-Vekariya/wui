@@ -16,19 +16,28 @@ export default function _layout() {
           fontWeight: "bold",
         },
         headerRight: () => <HeaderRight />,
-        contentStyle: { paddingHorizontal: 15, backgroundColor: theme.white },
+        contentStyle: { backgroundColor: theme.white },
       }}
     >
-      <Stack.Screen
+      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+      {/* <Stack.Screen
         name="index"
         options={{
           title: "WhatsApp",
         }}
-      />
+      /> */}
       <Stack.Screen
         name="settings"
         options={{
           title: "Settings",
+          animation: "slide_from_right",
+        }}
+      />
+      <Stack.Screen
+        name="chat"
+        options={{
+          title: "Chat",
+          animation: "ios",
         }}
       />
     </Stack>
