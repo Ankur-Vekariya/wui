@@ -59,6 +59,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     backgroundColor: theme.white,
     gap: 10,
+    paddingTop: 16,
   },
   title: {
     fontSize: 20,

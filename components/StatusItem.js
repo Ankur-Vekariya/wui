@@ -37,7 +37,7 @@ const StatusItem = ({ item }) => {
           style={{
             padding: 1,
             borderColor: theme.lightGreen,
-            borderWidth: 1.5,
+            borderWidth: 2,
             backgroundColor: "#0553",
             borderRadius: 100,
           }}
@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
     height: 65,
     backgroundColor: "#0553",
     borderRadius: 100,
-    borderWidth: 2,
+    borderWidth: 1,
     borderColor: theme.white,
   },
   centeredView: {

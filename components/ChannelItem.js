@@ -65,7 +65,6 @@ const styles = StyleSheet.create({
     fontWeight: "500",
   },
   description: {
-    marginTop: 10,
     fontSize: 14,
     textAlign: "center",
   },
@@ -74,7 +73,5 @@ const styles = StyleSheet.create({
     height: 80,
     backgroundColor: "#0553",
     borderRadius: 100,
-    borderWidth: 2,
-    borderColor: theme.white,
   },
 });
