@@ -15,10 +15,15 @@ export default function TabLayout() {
         headerTitleStyle: {
           color: theme.lightGreen,
           fontSize: 24,
-          fontWeight: "bold",
         },
         headerRight: () => <HeaderRight />,
-        // contentStyle: { backgroundColor: theme.white },
+        tabBarStyle: {
+          height: 75,
+        },
+        tabBarLabelStyle: {
+          fontSize: 14,
+          paddingBottom: 10,
+        },
       }}
     >
       <Tabs.Screen
@@ -28,7 +33,7 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => (
             <MaterialIcons
               name="mark-unread-chat-alt"
-              size={20}
+              size={24}
               color={color}
             />
           ),
@@ -39,8 +44,9 @@ export default function TabLayout() {
         options={{
           title: "Updates",
           tabBarIcon: ({ color }) => (
-            <MaterialIcons name="update" size={20} color={color} />
+            <MaterialIcons name="update" size={24} color={color} />
           ),
+          headerRight: () => <HeaderRight search={true} />,
         }}
       />
       <Tabs.Screen
@@ -48,7 +54,7 @@ export default function TabLayout() {
         options={{
           title: "Communities",
           tabBarIcon: ({ color }) => (
-            <FontAwesome5 name="users" size={20} color={color} />
+            <FontAwesome5 name="users" size={24} color={color} />
           ),
         }}
       />
@@ -57,7 +63,7 @@ export default function TabLayout() {
         options={{
           title: "Calls",
           tabBarIcon: ({ color }) => (
-            <Feather name="phone-call" size={20} color={color} />
+            <Feather name="phone-call" size={24} color={color} />
           ),
         }}
       />

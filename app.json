@@ -19,7 +19,12 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "android.permission.READ_CONTACTS",
+        "android.permission.WRITE_CONTACTS"
+      ],
+      "package": "com.ankur_vekariya.wui"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -32,6 +37,12 @@
           "contactsPermission": "Allow $(PRODUCT_NAME) to access your contacts."
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "4760eda7-6f7c-4f3e-8dba-4b9abb7211a0"
+      }
+    },
+    "owner": "ankur_vekariya"
   }
 }

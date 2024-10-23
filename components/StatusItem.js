@@ -10,11 +10,12 @@ import React, { useState } from "react";
 import { Image } from "expo-image";
 import { router } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
+import theme from "../utils/theme";
 
 const blurhash =
   "|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[";
 
-const ChatItem = ({ item }) => {
+const StatusItem = ({ item }) => {
   const [modalVisible, setModalVisible] = useState(false);
   // console.log(item);
 
@@ -28,24 +29,32 @@ const ChatItem = ({ item }) => {
         })
       }
     >
-      <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
-        <Image
-          style={styles.image}
-          source={{ uri: item?.image?.uri }}
-          placeholder={{ blurhash }}
-          contentFit="cover"
-          transition={1000}
-        />
-      </TouchableOpacity>
-      <View style={{ flex: 1, justifyContent: "center" }}>
-        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-          <Text style={styles.title}>{item?.name}</Text>
-          <Text
-            style={styles.description}
-          >{`${new Date().getHours()}:${new Date().getMinutes()}`}</Text>
+      <TouchableOpacity
+        onPress={() => setModalVisible(!modalVisible)}
+        style={{ maxWidth: 75 }}
+      >
+        <View
+          style={{
+            padding: 1,
+            borderColor: theme.lightGreen,
+            borderWidth: 1.5,
+            backgroundColor: "#0553",
+            borderRadius: 100,
+          }}
+        >
+          <Image
+            style={styles.image}
+            source={{ uri: item?.image?.uri }}
+            placeholder={{ blurhash }}
+            contentFit="cover"
+            transition={1000}
+          />
         </View>
-        <Text style={styles.description}>{item?.firstName}</Text>
-      </View>
+        <Text style={styles.description} numberOfLines={1} ellipsizeMode="tail">
+          {item?.firstName}
+        </Text>
+      </TouchableOpacity>
+
       <Modal
         animationType="fade"
         transparent={true}
@@ -82,7 +91,7 @@ const ChatItem = ({ item }) => {
   );
 };
 
-export default ChatItem;
+export default StatusItem;
 
 const styles = StyleSheet.create({
   item: {
@@ -90,21 +99,23 @@ const styles = StyleSheet.create({
     marginVertical: 6,
     gap: 10,
     paddingVertical: 6,
-    // borderWidth: 1,
-    // borderColor: "red",
   },
   title: {
     fontSize: 16,
     fontWeight: "500",
   },
   description: {
+    marginTop: 10,
     fontSize: 14,
+    textAlign: "center",
   },
   image: {
-    width: 50,
-    height: 50,
+    width: 65,
+    height: 65,
     backgroundColor: "#0553",
     borderRadius: 100,
+    borderWidth: 2,
+    borderColor: theme.white,
   },
   centeredView: {
     flex: 1,
@@ -113,7 +124,6 @@ const styles = StyleSheet.create({
     marginTop: 22,
   },
   modalView: {
-    // backgroundColor: "white",
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
